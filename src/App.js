@@ -27,7 +27,7 @@ class App extends React.Component {
       <div>
         <p>More Coming Soon!</p>
         <p>
-          For now, find me on
+          For now, please find me on&nbsp;
           <a href='https://linkedin.com/in/kristinwiseman' target="_blank">LinkedIn</a>
         </p>
       </div>
