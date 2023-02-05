@@ -21,11 +21,18 @@ class App extends React.Component {
 
   render() {
   return (
-    <div className="App">
+    <>
       <header className="App-header">
         <NavBar></NavBar>
       </header>
-    </div>
+      <div>
+        <p>More Coming Soon!</p>
+        <p>
+          For now, find me on
+          <a href='https://linkedin.com/in/kristinwiseman' target="_blank">LinkedIn</a>
+        </p>
+      </div>
+    </>
   );
   }
 }
