@@ -5,8 +5,9 @@ function NavBar(props) {
   return (
     <nav>
       <ul>
-        <li>Home</li>
         <li>About</li>
+        <li>Projects</li>
+        <li>Contact</li>
       </ul>
     </nav>
   );
@@ -28,7 +29,7 @@ class App extends React.Component {
         <p>More Coming Soon!</p>
         <p>
           For now, please find me on&nbsp;
-          <a href='https://linkedin.com/in/kristinwiseman' target="_blank">LinkedIn</a>
+          <a href='https://linkedin.com/in/kristinwiseman' rel="noreferrer" target="_blank">LinkedIn</a>
         </p>
       </div>
     </>
