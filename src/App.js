@@ -1,15 +1,18 @@
 import React from 'react';
 import './App.css';
 
+import AppBar from '@mui/material/AppBar';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+
 function NavBar(props) {
   return (
-    <nav>
-      <ul>
-        <li>About</li>
-        <li>Projects</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
+    <AppBar>
+      <IconButton>
+        <MenuIcon/>
+      </IconButton>
+    </AppBar>
   );
 }
 
