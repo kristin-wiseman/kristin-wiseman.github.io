@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 
+import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
@@ -8,11 +9,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 function NavBar(props) {
   return (
-    <AppBar>
-      <IconButton>
-        <MenuIcon/>
-      </IconButton>
-    </AppBar>
+    <Box>
+      <AppBar>
+        <IconButton>
+          <MenuIcon/>
+        </IconButton>
+      </AppBar>
+    </Box>
   );
 }
 
@@ -25,7 +28,7 @@ class App extends React.Component {
   render() {
   return (
     <>
-      <header className="App-header">
+      <header>
         <NavBar></NavBar>
       </header>
       <div>
