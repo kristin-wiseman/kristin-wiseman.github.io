@@ -7,6 +7,7 @@ import './App.css';
 function NavBar(props) {
   return (
     <nav>
+      <FontAwesomeIcon icon={solid('bars')} />
       <ul>
         <li>About</li>
         <li>Projects</li>
