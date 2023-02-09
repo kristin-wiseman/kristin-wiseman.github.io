@@ -4,6 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const muiFontWts = ['300', '400', '500', '700'];
+const muiFont = 'roboto';
+for (let i=0; i<4; i++) {
+  import (`@fontsource/${muiFont}/${muiFontWts[i]}.css`);
+}
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
