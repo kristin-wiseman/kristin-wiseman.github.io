@@ -1,13 +1,9 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { solid, brands } from '@fortawesome/fontawesome-svg-core/import.macro';
-
 import './App.css';
 
 function NavBar(props) {
   return (
     <nav>
-      <FontAwesomeIcon icon={solid('bars')} />
       <ul>
         <li>About</li>
         <li>Projects</li>
