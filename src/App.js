@@ -9,6 +9,8 @@ import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 
 // MUI Icons:
 import MenuIcon from '@mui/icons-material/Menu';
@@ -16,7 +18,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 const kwTheme = createTheme({
   palette: {
     primary: {
-      main: '#060039'
+      main: '#060039',
+      contrastText: '#E3DFFF'
     },
     secondary: {
       main: '#918ea5'
@@ -35,9 +38,12 @@ function NavBar(props) {
   return (
     <Box>
       <AppBar>
-        <IconButton aria-label="menu" size="large">
-          <MenuIcon fontSize="inherit" />
-        </IconButton>
+        <Toolbar>
+          <Typography variant="h1" component="div">KW</Typography>
+          <IconButton aria-label="menu" size="large">
+            <MenuIcon fontSize="inherit" />
+          </IconButton>
+        </Toolbar>
       </AppBar>
     </Box>
   );
@@ -56,11 +62,11 @@ class App extends React.Component {
         <NavBar></NavBar>
       </header>
       <Box>
-        <p>More Coming Soon!</p>
-        <p>
+        <Typography variant="h4" component="div">More Coming Soon!</Typography>
+        <Typography variant="body1">
           For now, please find me on&nbsp;
-          <a href='https://linkedin.com/in/kristinwiseman' rel="noreferrer" target="_blank">LinkedIn</a>
-        </p>
+          <a href="https://linkedin.com/in/kristinwiseman" rel="noreferrer" target="_blank">LinkedIn</a>
+        </Typography>
       </Box>
     </ThemeProvider>
   );
