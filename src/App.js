@@ -34,10 +34,12 @@ const kwTheme = createTheme({
   }
 });
 
+// const Offset = styled("div")(({theme}) => theme.mixins.toolbar); for appbar covering text?
+
 function NavBar(props) {
   return (
     <Box>
-      <AppBar>
+      <AppBar position="static">
         <Toolbar>
           <Typography variant="h1" component="div">KW</Typography>
           <IconButton aria-label="menu" size="large">
