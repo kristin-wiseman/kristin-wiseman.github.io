@@ -11,6 +11,7 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
+import styled from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
@@ -36,14 +37,19 @@ const kwTheme = createTheme({
   }
 });
 
+const PrimaryIconButton = styled(IconButton)(({kwTheme}) => ({
+  color: kwTheme.palette.primary.contrastText,
+  size: "large"
+}));
+
 function NavBar(props) {
   return (
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h1" component="div">KW</Typography>
-          <IconButton aria-label="menu" size="large">
-            <MenuIcon fontSize="inherit" color={kwTheme.palette.primary.contrastText} />
-          </IconButton>
+          <PrimaryIconButton aria-label="menu">
+            <MenuIcon />
+          </PrimaryIconButton>
         </Toolbar>
       </AppBar>
   );
