@@ -7,6 +7,6 @@ const PrimaryIconButton = styled(IconButton)(({theme}) => ({
     size: "large"
   }));
 
-export default function() {
+export default function StyledCustomization() {
     return <PrimaryIconButton></PrimaryIconButton>
 }
