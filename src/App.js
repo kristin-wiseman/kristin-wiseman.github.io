@@ -37,8 +37,8 @@ const kwTheme = createTheme({
   }
 });
 
-const PrimaryIconButton = styled(IconButton)(({kwTheme}) => ({
-  color: kwTheme.palette.primary.contrastText,
+const PrimaryIconButton = styled(IconButton)(({theme}) => ({
+  color: theme.palette.primary.contrastText,
   size: "large"
 }));
 
