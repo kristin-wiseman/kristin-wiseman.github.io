@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './PrimaryIconButton.js';
 
 // MUI Theme & Styling
 import { ThemeProvider, createTheme} from '@mui/material/styles';
@@ -11,7 +12,7 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
-import styled from '@mui/material/styles';
+
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
@@ -36,11 +37,6 @@ const kwTheme = createTheme({
     contrastThreshold: 4.5
   }
 });
-
-const PrimaryIconButton = styled(IconButton)(({theme}) => ({
-  color: theme.palette.primary.contrastText,
-  size: "large"
-}));
 
 function NavBar(props) {
   return (
