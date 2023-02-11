@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import './PrimaryIconButton.js';
+//import './PrimaryIconButton.js';
 
 // MUI Theme & Styling
 import { ThemeProvider, createTheme} from '@mui/material/styles';
@@ -22,8 +22,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 const kwTheme = createTheme({
   palette: {
     primary: {
-      main: '#060039'
-      //contrastText: '#E3DFFF'
+      main: '#060039',
+      contrastText: '#FFFFFF'
     },
     secondary: {
       main: '#918ea5'
@@ -43,9 +43,9 @@ function NavBar(props) {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h1" component="div">KW</Typography>
-          <PrimaryIconButton aria-label="menu">
-            <MenuIcon />
-          </PrimaryIconButton>
+          <IconButton aria-label="menu" size="large">
+            <MenuIcon color="contrastText" />
+          </IconButton>
         </Toolbar>
       </AppBar>
   );
