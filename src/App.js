@@ -22,14 +22,13 @@ import MenuIcon from '@mui/icons-material/Menu';
 const kwTheme = createTheme({
   palette: {
     primary: {
-      main: '#060039',
-      contrastText: '#FFFFFF'
+      main: '#020014',
     },
     secondary: {
       main: '#918ea5'
     },
     neutral: {
-      main: '#929094'
+      main: '#9B9A9E'
     },
     error: {
       main: '#ba1a1a'
@@ -43,8 +42,8 @@ function NavBar(props) {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h1" component="div">KW</Typography>
-          <IconButton aria-label="menu" size="large" color="primary">
-            <MenuIcon />
+          <IconButton aria-label="menu" size="large">
+            <MenuIcon color="neutral"/>
           </IconButton>
         </Toolbar>
       </AppBar>
