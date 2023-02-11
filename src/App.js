@@ -41,7 +41,7 @@ function NavBar(props) {
         <Toolbar>
           <Typography variant="h1" component="div">KW</Typography>
           <IconButton aria-label="menu" size="large">
-            <MenuIcon fontSize="inherit" color="primary" />
+            <MenuIcon fontSize="inherit" color="primary.contrastText" />
           </IconButton>
         </Toolbar>
       </AppBar>
