@@ -43,8 +43,8 @@ function NavBar(props) {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h1" component="div">KW</Typography>
-          <IconButton aria-label="menu" size="large">
-            <MenuIcon color="contrastText" />
+          <IconButton aria-label="menu" size="large" color="primary">
+            <MenuIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
