@@ -18,8 +18,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 const kwTheme = createTheme({
   palette: {
     primary: {
-      main: '#060039',
-      contrastText: '#E3DFFF'
+      main: '#060039'
+      //contrastText: '#E3DFFF'
     },
     secondary: {
       main: '#918ea5'
@@ -34,8 +34,6 @@ const kwTheme = createTheme({
   }
 });
 
-// const Offset = styled("div")(({theme}) => theme.mixins.toolbar); for appbar covering text?
-
 function NavBar(props) {
   return (
     <Box>
@@ -43,7 +41,7 @@ function NavBar(props) {
         <Toolbar>
           <Typography variant="h1" component="div">KW</Typography>
           <IconButton aria-label="menu" size="large">
-            <MenuIcon fontSize="inherit" />
+            <MenuIcon fontSize="inherit" color="primary" />
           </IconButton>
         </Toolbar>
       </AppBar>
