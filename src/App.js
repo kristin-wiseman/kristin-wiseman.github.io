@@ -12,7 +12,8 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
-
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
@@ -42,9 +43,13 @@ function NavBar(props) {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h1" component="div">KW</Typography>
-          <IconButton aria-label="menu" size="large">
+          <IconButton aria-label="menu" aria-controls="main-menu" size="large">
             <MenuIcon color="neutral"/>
           </IconButton>
+          <Menu id="main-menu">
+            <MenuItem>About</MenuItem>
+            <MenuItem>Contact Me</MenuItem>
+          </Menu>
         </Toolbar>
       </AppBar>
   );
