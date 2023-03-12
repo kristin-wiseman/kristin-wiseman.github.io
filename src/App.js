@@ -7,7 +7,7 @@ import { ThemeProvider, createTheme} from '@mui/material/styles';
 
 // MUI Components:
 import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
+//import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
@@ -55,14 +55,9 @@ function NavBar(props) {
   );
 }
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
+export default function App() {
   return (
+    <>
     <ThemeProvider theme={kwTheme}>
       <header>
         <NavBar></NavBar>
@@ -75,8 +70,6 @@ class App extends React.Component {
         </Typography>
       </Container>
     </ThemeProvider>
+    </>
   );
-  }
-}
-
-export default App;
+};
