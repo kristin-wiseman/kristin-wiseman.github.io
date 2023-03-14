@@ -7,7 +7,7 @@ import { ThemeProvider, createTheme} from '@mui/material/styles';
 
 // MUI Components:
 import AppBar from '@mui/material/AppBar';
-//import Box from '@mui/material/Box';
+import Box from '@mui/material/Box';
 //import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
@@ -56,17 +56,17 @@ function NavBar(props) {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h1" component="div">KW</Typography>
-          <IconButton onClick={handleMenu} aria-label="menu" aria-controls="main-menu" size="large">
+          <IconButton onClick={handleMenu} aria-label="menu" aria-controls="main-menu" aria-haspopup="true" size="large">
             <MenuIcon color="neutral"/>
           </IconButton>
           <Menu id="main-menu" anchorEl={anchorEl}
-          anchorOrigin={{vertical: 'top', horizontal: 'right'}}
+          anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
           keepMounted
           transformOrigin={{vertical: 'top', horizontal: 'right',}}
           open={Boolean(anchorEl)}
           onClose={handleClose}
           >
-            <MenuItem onClick={handleClose}>About</MenuItem>
+            <MenuItem onClick={handleClose}><a href="#about-me">About</a></MenuItem>
             <MenuItem onClick={handleClose}>Contact Me</MenuItem>
           </Menu>
         </Toolbar>
@@ -81,13 +81,19 @@ export default function App() {
       <header>
         <NavBar></NavBar>
       </header>
-      <Container maxWidth="md" background-color="secondary">
-        <Typography variant="h4" component="div">More Coming Soon!</Typography>
-        <Typography variant="body1">
-          For now, please find me on&nbsp;
-          <Link href="https://linkedin.com/in/kristinwiseman" rel="noreferrer" target="_blank">LinkedIn</Link>
+      <Container maxWidth="md" sx={{bgcolor: secondary}}>
+        <Typography variant="h4" component="div">This site is under construction</Typography>
+        <Typography variant="body1">There's more coming soon!
+            For now, please find me on&nbsp;
+            <Link href="https://linkedin.com/in/kristinwiseman" rel="noreferrer" target="_blank">LinkedIn</Link>
         </Typography>
       </Container>
+      <Box sx={{bgcolor: secondary}}>
+      <Container id="about-me">
+        <Typography variant="h2">About Me</Typography>
+        <Typography variant="body1">I'm currently a part time apprentice developer at net2Community, Inc. My work there revolves around Drupal (theming and site building), but in my spare time I like to use the MERN stack. Here's where I say more good things about myself and maybe move the link to my LinkedIn from above. This bio may be incomplete, but at least it says more about me than lorem ipsum text..?</Typography>
+      </Container>
+      </Box>
     </ThemeProvider>
     </>
   );
