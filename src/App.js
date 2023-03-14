@@ -8,7 +8,7 @@ import { ThemeProvider, createTheme} from '@mui/material/styles';
 // MUI Components:
 import AppBar from '@mui/material/AppBar';
 //import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+//import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
@@ -39,16 +39,35 @@ const kwTheme = createTheme({
 });
 
 function NavBar(props) {
+  const [auth, setAuth] = React.useState(true);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const handleChange = (event) => {
+    setAuth(event.target.checked);
+  };
+  const handleMenu = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   return (
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h1" component="div">KW</Typography>
-          <IconButton aria-label="menu" aria-controls="main-menu" size="large">
+          <IconButton onClick={handleMenu} aria-label="menu" aria-controls="main-menu" size="large">
             <MenuIcon color="neutral"/>
           </IconButton>
-          <Menu id="main-menu">
-            <MenuItem>About</MenuItem>
-            <MenuItem>Contact Me</MenuItem>
+          <Menu id="main-menu" anchorEl={anchorEl}
+          anchorOrigin={{vertical: 'top', horizontal: 'right'}}
+          keepMounted
+          transformOrigin={{vertical: 'top', horizontal: 'right',}}
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+          >
+            <MenuItem onClick={handleClose}>About</MenuItem>
+            <MenuItem onClick={handleClose}>Contact Me</MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>
