@@ -2,13 +2,16 @@ a {
   text-decoration: none;
 }
 
-#mainMenuIcon {
+#main-menu-icon {
   font-size: 4rem;
-  justify-self: end;
 }
 
 nav ul {
   list-style: none;
+}
+
+#site-title {
+  flex-grow: 1;
 }
 
 @media (prefers-reduced-motion: no-preference) {

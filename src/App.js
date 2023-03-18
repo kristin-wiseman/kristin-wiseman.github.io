@@ -58,9 +58,9 @@ function NavBar(props) {
   return (
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h1" component="div">KW</Typography>
-          <IconButton id="mainMenuIcon" onClick={handleMenu} aria-label="menu" aria-controls="main-menu" aria-haspopup="true" size="large">
-            <MenuIcon color="neutral"/>
+          <Typography id="site-title" variant="h1" component="div">KW</Typography>
+          <IconButton onClick={handleMenu} aria-label="menu" aria-controls="main-menu" aria-haspopup="true" size="large">
+            <MenuIcon id="main-menu-icon" color="neutral"/>
           </IconButton>
           <Menu id="main-menu" anchorEl={anchorEl}
           anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
