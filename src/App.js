@@ -19,6 +19,9 @@ import Typography from '@mui/material/Typography';
 
 // MUI Icons:
 import MenuIcon from '@mui/icons-material/Menu';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const kwTheme = createTheme({
   palette: {
@@ -66,8 +69,8 @@ function NavBar(props) {
           open={Boolean(anchorEl)}
           onClose={handleClose}
           >
-            <MenuItem onClick={handleClose}><a href="#about-me">About</a></MenuItem>
-            <MenuItem onClick={handleClose}>Contact Me</MenuItem>
+            <MenuItem onClick={handleClose}><a href="#about-section">About</a></MenuItem>
+            <MenuItem onClick={handleClose}><a href='#contact-section'>Contact Me</a></MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>
@@ -89,11 +92,17 @@ export default function App() {
         </Typography>
       </Container>
       <Box sx={{bgcolor: kwTheme.palette.secondary.main}}>
-      <Container id="about-me">
+      <Container id="about-section">
         <Typography variant="h2">About Me</Typography>
         <Typography variant="body1">I'm currently a part time apprentice developer at net2Community, Inc. My work there revolves around Drupal (theming and site building), but in my spare time I like to use the MERN stack. Here's where I say more good things about myself and maybe move the link to my LinkedIn from above. This bio may be incomplete, but at least it says more about me than lorem ipsum text..?</Typography>
       </Container>
       </Box>
+      <Container id="contact-section">
+        <Typography variant="h2">Contact</Typography>
+        <LinkedInIcon />
+        <EmailIcon />
+        <GitHubIcon />
+      </Container>
     </ThemeProvider>
     </>
   );
