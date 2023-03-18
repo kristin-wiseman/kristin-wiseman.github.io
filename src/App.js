@@ -59,8 +59,8 @@ function NavBar(props) {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h1" component="div">KW</Typography>
-          <IconButton onClick={handleMenu} edge="end" aria-label="menu" aria-controls="main-menu" aria-haspopup="true" size="large">
-            <MenuIcon color="neutral" sx={{fontSize: "6rem"}}/>
+          <IconButton id="mainMenuIcon" onClick={handleMenu} aria-label="menu" aria-controls="main-menu" aria-haspopup="true" size="large">
+            <MenuIcon color="neutral"/>
           </IconButton>
           <Menu id="main-menu" anchorEl={anchorEl}
           anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
@@ -84,14 +84,14 @@ export default function App() {
       <header>
         <NavBar></NavBar>
       </header>
-      <Container maxWidth="md" sx={{bgcolor: kwTheme.palette.secondary}}>
+      <Container maxWidth="md">
         <Typography variant="h4" component="div">This site is under construction</Typography>
         <Typography variant="body1">There's more coming soon!
             For now, please find me on&nbsp;
             <Link href="https://linkedin.com/in/kristinwiseman" rel="noreferrer" target="_blank">LinkedIn</Link>
         </Typography>
       </Container>
-      <Box sx={{bgcolor: kwTheme.palette.secondary.main}}>
+      <Box sx={{bgcolor: kwTheme.palette.neutral.main}}>
       <Container id="about-section">
         <Typography variant="h2">About Me</Typography>
         <Typography variant="body1">I'm currently a part time apprentice developer at net2Community, Inc. My work there revolves around Drupal (theming and site building), but in my spare time I like to use the MERN stack. Here's where I say more good things about myself and maybe move the link to my LinkedIn from above. This bio may be incomplete, but at least it says more about me than lorem ipsum text..?</Typography>

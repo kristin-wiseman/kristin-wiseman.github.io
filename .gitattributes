@@ -1,0 +1,5 @@
+# This file prevents line ending issues while developing with Unix and Windows
+# Forces everything to be LF, except for Windows batch files that require CRLF:
+* text=auto eol=lf
+*.{cmd,[cC][mM][dD]} text eol=crlf
+*.{bat,[bB][aA][tT]} text eol=crlf
