@@ -60,7 +60,7 @@ function NavBar(props) {
         <Toolbar>
           <Typography id="site-title" variant="h1" component="div">KW</Typography>
           <IconButton onClick={handleMenu} aria-label="menu" aria-controls="main-menu" aria-haspopup="true" size="large">
-            <MenuIcon id="main-menu-icon" color="neutral"/>
+            <MenuIcon id="main-menu-icon"/>
           </IconButton>
           <Menu id="main-menu" anchorEl={anchorEl}
           anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
@@ -85,7 +85,7 @@ export default function App() {
         <NavBar></NavBar>
       </header>
       <Container maxWidth="md">
-        <Typography variant="h4" component="div">This site is under construction</Typography>
+        <Typography variant="h2" component="div">This site is under construction</Typography>
         <Typography variant="body1">There's more coming soon!
             For now, please find me on&nbsp;
             <Link href="https://linkedin.com/in/kristinwiseman" rel="noreferrer" target="_blank">LinkedIn</Link>
@@ -93,12 +93,12 @@ export default function App() {
       </Container>
       <Box sx={{bgcolor: kwTheme.palette.neutral.main}}>
       <Container id="about-section">
-        <Typography variant="h2">About Me</Typography>
+        <Typography variant="h3">About Me</Typography>
         <Typography variant="body1">I'm currently a part time apprentice developer at net2Community, Inc. My work there revolves around Drupal (theming and site building), but in my spare time I like to use the MERN stack. Here's where I say more good things about myself and maybe move the link to my LinkedIn from above. This bio may be incomplete, but at least it says more about me than lorem ipsum text..?</Typography>
       </Container>
       </Box>
       <Container id="contact-section">
-        <Typography variant="h2">Contact</Typography>
+        <Typography variant="h3">Contact</Typography>
         <LinkedInIcon />
         <EmailIcon />
         <GitHubIcon />
