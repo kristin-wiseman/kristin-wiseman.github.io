@@ -8,7 +8,7 @@ import { ThemeProvider, createTheme} from '@mui/material/styles';
 // MUI Components:
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
+//import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import Container from '@mui/material/Container';
@@ -45,12 +45,8 @@ const kwTheme = createTheme({
 });
 
 function NavBar(props) {
-  const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
-  };
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -81,28 +77,32 @@ function NavBar(props) {
 }
 
 function ColorCompare(props) {
-  const [auth, setAuth] = React.useState(true);
-  const handleChange = (event) => {
-    setAuth(event.target.value);
+  const [color1, setColor1] = React.useState("FFFFFF");
+  const [color2, setColor2] = React.useState("FFFFFF");
+
+  const handleColor1 = (event) => {
+    setColor1(event.target.value);
+  };
+  const handleColor2 = (event) => {
+    setColor2(event.target.value);
   };
 
   return (
     <Box id="color-compare" display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2}>
+      <Typography variant="h3">Color Comparator</Typography>
       <Box gridColumn="span 6">
         <Card variant="outlined">
-          <Box sx={{height: 300, bgcolor:"#"+auth}}></Box>
+          <Box sx={{height: 300, bgcolor:"#"+color1}}></Box>
           <CardActions>
-            <TextField id='color1' onChange={handleChange} label="Color 1" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
-            {/*<Button variant="contained">Select</Button>*/}
+            <TextField id='c1' onChange={handleColor1} label="Color 1" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
           </CardActions>
         </Card>
       </Box>
       <Box gridColumn="span 6">
         <Card variant="outlined">
-          <Box></Box>
+          <Box sx={{height: 300, bgcolor:"#"+color2}}></Box>
           <CardActions>
-            <TextField id='color2' onChange={handleChange} label="Color 2" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
-            {/*<Button variant="contained">Select</Button>*/}
+            <TextField id='c2' onChange={handleColor2} label="Color 2" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
           </CardActions>
         </Card>
       </Box>
