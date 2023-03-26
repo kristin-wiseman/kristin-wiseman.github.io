@@ -89,7 +89,6 @@ function ColorCompare(props) {
 
   return (
     <Box id="color-compare" display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2}>
-      <Typography variant="h3">Color Comparator</Typography>
       <Box gridColumn="span 6">
         <Card variant="outlined">
           <Box sx={{height: 300, bgcolor:"#"+color1}}></Box>
@@ -125,6 +124,7 @@ export default function App() {
             <Link href="https://linkedin.com/in/kristinwiseman" rel="noreferrer" target="_blank">LinkedIn</Link>
         </Typography>
       </Container>
+      <Typography variant="h3">Color Comparator</Typography>
       <ColorCompare />
       <Box sx={{bgcolor: kwTheme.palette.neutral.main}}>
         <Container id="about-section">
