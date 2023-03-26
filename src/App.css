@@ -3,7 +3,12 @@ a {
   color: unset;
 }
 
-#contact-section > svg {
+#about-section {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+#contact-section > a > svg {
   font-size: 2rem;
 }
 
