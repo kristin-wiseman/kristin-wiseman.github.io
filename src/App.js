@@ -81,21 +81,28 @@ function NavBar(props) {
 }
 
 function ColorCompare(props) {
+  const [auth, setAuth] = React.useState(true);
+  const handleChange = (event) => {
+    setAuth(event.target.value);
+  };
+
   return (
     <Box id="color-compare" display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2}>
       <Box gridColumn="span 6">
         <Card variant="outlined">
+          <Box sx={{height: 300, bgcolor:"#"+auth}}></Box>
           <CardActions>
-            <TextField id='color1' label="Color 1" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
-            <Button variant="contained">Select</Button>
+            <TextField id='color1' onChange={handleChange} label="Color 1" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
+            {/*<Button variant="contained">Select</Button>*/}
           </CardActions>
         </Card>
       </Box>
       <Box gridColumn="span 6">
         <Card variant="outlined">
+          <Box></Box>
           <CardActions>
-            <TextField id='color2' label="Color 2" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
-            <Button variant="contained">Select</Button>
+            <TextField id='color2' onChange={handleChange} label="Color 2" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
+            {/*<Button variant="contained">Select</Button>*/}
           </CardActions>
         </Card>
       </Box>
