@@ -9,12 +9,13 @@ import { ThemeProvider, createTheme} from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -83,16 +84,20 @@ function ColorCompare(props) {
   return (
     <Box id="color-compare" display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2}>
       <Box gridColumn="span 6">
-        <Paper variant="outlined" square>
-          <TextField id='color1' label="Color 1" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
-          <Button variant="contained">Select</Button>
-        </Paper>
+        <Card variant="outlined">
+          <CardActions>
+            <TextField id='color1' label="Color 1" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
+            <Button variant="contained">Select</Button>
+          </CardActions>
+        </Card>
       </Box>
       <Box gridColumn="span 6">
-        <Paper variant="outlined" square>
-          <TextField id='color2' label="Color 2" variant="outlined"></TextField>
-          <Button variant="contained">Select</Button>
-        </Paper>
+        <Card variant="outlined">
+          <CardActions>
+            <TextField id='color2' label="Color 2" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
+            <Button variant="contained">Select</Button>
+          </CardActions>
+        </Card>
       </Box>
 
     </Box>
