@@ -102,7 +102,7 @@ function ColorCompare(props) {
             <TextField id='c1' onChange={handleColor1} label="Color 1" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
             <IconButton expand={expanded} onClick={handleExpandClick}><ExpandCircleDownIcon /></IconButton>
           </CardActions>
-          <Collapse unmountOnExit>
+          <Collapse in={expanded} unmountOnExit>
             <Typography variant="body1">RGB: </Typography>
           </Collapse>
         </Card>
@@ -114,6 +114,9 @@ function ColorCompare(props) {
             <TextField id='c2' onChange={handleColor2} label="Color 2" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
             <IconButton expand={expanded} onClick={handleExpandClick}><ExpandCircleDownIcon /></IconButton>
           </CardActions>
+          <Collapse in={expanded} unmountOnExit>
+            <Typography variant="body1">RGB: </Typography>
+          </Collapse>
         </Card>
       </Box>
 
