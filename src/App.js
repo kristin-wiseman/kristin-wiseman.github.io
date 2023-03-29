@@ -12,6 +12,7 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import Container from '@mui/material/Container';
+import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
 import Menu from '@mui/material/Menu';
@@ -22,6 +23,7 @@ import Typography from '@mui/material/Typography';
 
 // MUI Icons:
 import MenuIcon from '@mui/icons-material/Menu';
+import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -79,12 +81,16 @@ function NavBar(props) {
 function ColorCompare(props) {
   const [color1, setColor1] = React.useState("FFFFFF");
   const [color2, setColor2] = React.useState("FFFFFF");
+  const [expanded, setExpanded] = React.useState(false);
 
   const handleColor1 = (event) => {
     setColor1(event.target.value);
   };
   const handleColor2 = (event) => {
     setColor2(event.target.value);
+  };
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
   };
 
   return (
@@ -94,7 +100,11 @@ function ColorCompare(props) {
           <Box sx={{height: 300, bgcolor:"#"+color1}}></Box>
           <CardActions>
             <TextField id='c1' onChange={handleColor1} label="Color 1" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
+            <IconButton expand={expanded} onClick={handleExpandClick}><ExpandCircleDownIcon /></IconButton>
           </CardActions>
+          <Collapse unmountOnExit>
+            <Typography variant="body1">RGB: </Typography>
+          </Collapse>
         </Card>
       </Box>
       <Box gridColumn="span 6">
@@ -102,6 +112,7 @@ function ColorCompare(props) {
           <Box sx={{height: 300, bgcolor:"#"+color2}}></Box>
           <CardActions>
             <TextField id='c2' onChange={handleColor2} label="Color 2" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
+            <IconButton expand={expanded} onClick={handleExpandClick}><ExpandCircleDownIcon /></IconButton>
           </CardActions>
         </Card>
       </Box>
