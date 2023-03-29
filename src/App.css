@@ -24,6 +24,7 @@ a {
 
 #site-title {
   flex-grow: 1;
+  display: block;
 }
 
 @media (prefers-reduced-motion: no-preference) {
