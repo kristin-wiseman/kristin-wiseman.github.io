@@ -1,9 +1,6 @@
 import React from 'react';
 import './App.css';
 
-// MUI Theme & Styling
-import { ThemeProvider, createTheme} from '@mui/material/styles';
-
 // MUI Components:
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -23,24 +20,6 @@ import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import GitHubIcon from '@mui/icons-material/GitHub';
-
-const kwTheme = createTheme({
-  palette: {
-    primary: {
-      main: '#020014',
-    },
-    secondary: {
-      main: '#918ea5'
-    },
-    neutral: {
-      main: '#9B9A9E'
-    },
-    error: {
-      main: '#ba1a1a'
-    },
-    contrastThreshold: 4.5
-  }
-});
 
 function NavBar(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -123,32 +102,28 @@ function ColorCompare(props) {
 export default function App() {
   return (
     <>
-    <ThemeProvider theme={kwTheme}>
       <header>
         <NavBar />
       </header>
-      <Container maxWidth="md">
+      <div>
         <h2>This site is under construction</h2>
         <p>There's more coming soon!
             For now, please find me on&nbsp;
             <a href="https://linkedin.com/in/kristinwiseman" rel="noreferrer" target="_blank">LinkedIn</a>
         </p>
-      </Container>
+      </div>
       <h3>Color Comparator</h3>
       <ColorCompare />
-      <Box sx={{bgcolor: kwTheme.palette.neutral.main}}>
-        <Container id="about-section">
-          <h3>About Me</h3>
-          <p>I'm currently a part time apprentice developer at net2Community, Inc. My work there revolves around Drupal (theming and site building), but in my spare time I like to use the MERN stack. Here's where I say more good things about myself and maybe move the link to my LinkedIn from above. This bio may be incomplete, but at least it says more about me than lorem ipsum text..?</p>
-        </Container>
-      </Box>
-      <Container id="contact-section">
+      <div id="about-section">
+        <h3>About Me</h3>
+        <p>I'm currently a part time apprentice developer at net2Community, Inc. My work there revolves around Drupal (theming and site building), but in my spare time I like to use the MERN stack. Here's where I say more good things about myself and maybe move the link to my LinkedIn from above. This bio may be incomplete, but at least it says more about me than lorem ipsum text..?</p>
+      </div>
+      <div id="contact-section">
         <h3>Contact</h3>
         <a href="https://linkedin.com/in/kristinwiseman" rel="noreferrer" target="_blank"><LinkedInIcon /></a>
         <a href="mailto:kristin.w.dev@gmail.com"><EmailIcon /></a>
         <a href="https://github.com/kristin-wiseman"><GitHubIcon /></a>
-      </Container>
-    </ThemeProvider>
+      </div>
     </>
   );
 };
