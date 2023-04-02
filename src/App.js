@@ -7,7 +7,10 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
+import Toolbar from '@mui/material/Toolbar';
 
 // MUI Icons:
 import MenuIcon from '@mui/icons-material/Menu';
@@ -20,19 +23,25 @@ function NavBar(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleMenu = (event) => {
-    setAnchorEl(anchorEl ? null : event.currentTarget.nextSibling);
+    setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
 
   return (
-      <nav className='menu'>
+      <nav>
         <h1 id="site-title">KW</h1>
         <button onClick={handleMenu} aria-label="menu" aria-controls="main-menu" aria-haspopup="true">
           <MenuIcon id="main-menu-icon"/>
         </button>
-        <ul id="main-menu" anchorEl={anchorEl} keepMounted hidden={anchorEl ? false : true}>
+        <ul id="main-menu" anchorEl={anchorEl}
+        anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
+        keepMounted
+        transformOrigin={{vertical: 'top', horizontal: 'right',}}
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+        >
           <li onClick={handleClose}><a href="#about-section">About</a></li>
           <li onClick={handleClose}><a href='#contact-section'>Contact Me</a></li>
         </ul>
