@@ -2,9 +2,11 @@ import React from 'react';
 import './App.css';
 
 // MUI Components:
+import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
+import Container from '@mui/material/Container';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
@@ -30,22 +32,24 @@ function NavBar(props) {
   };
 
   return (
-      <nav>
-        <h1 id="site-title">KW</h1>
-        <button onClick={handleMenu} aria-label="menu" aria-controls="main-menu" aria-haspopup="true">
-          <MenuIcon id="main-menu-icon"/>
-        </button>
-        <ul id="main-menu" anchorEl={anchorEl}
-        anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
-        keepMounted
-        transformOrigin={{vertical: 'top', horizontal: 'right',}}
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-        >
-          <li onClick={handleClose}><a href="#about-section">About</a></li>
-          <li onClick={handleClose}><a href='#contact-section'>Contact Me</a></li>
-        </ul>
-      </nav>
+      <AppBar position="static">
+        <Toolbar>
+          <h1 id="site-title">KW</h1>
+          <IconButton onClick={handleMenu} aria-label="menu" aria-controls="main-menu" aria-haspopup="true" size="large">
+            <MenuIcon id="main-menu-icon"/>
+          </IconButton>
+          <Menu id="main-menu" anchorEl={anchorEl}
+          anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
+          keepMounted
+          transformOrigin={{vertical: 'top', horizontal: 'right',}}
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+          >
+            <MenuItem onClick={handleClose}><a href="#about-section">About</a></MenuItem>
+            <MenuItem onClick={handleClose}><a href='#contact-section'>Contact Me</a></MenuItem>
+          </Menu>
+        </Toolbar>
+      </AppBar>
   );
 }
 
@@ -98,7 +102,9 @@ function ColorCompare(props) {
 export default function App() {
   return (
     <>
-      <NavBar />
+      <header>
+        <NavBar />
+      </header>
       <div>
         <h2>This site is under construction</h2>
         <p>There's more coming soon!
