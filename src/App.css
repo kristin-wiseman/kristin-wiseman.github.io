@@ -4,7 +4,6 @@
 
 a {
   text-decoration: none;
-  color: unset;
 }
 
 #about-section {
@@ -18,7 +17,10 @@ a {
 
 #main-menu-icon {
   font-size: 4rem;
-  color: #ffffff;
+}
+
+.menu ul {
+  list-style: none;
 }
 
 .MuiContainer-root {
@@ -27,8 +29,7 @@ a {
 }
 
 #site-title {
-  flex-grow: 1;
-  display: block;
+  display: inline-block;
 }
 
 @media (prefers-reduced-motion: no-preference) {
