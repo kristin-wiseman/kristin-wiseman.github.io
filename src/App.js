@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+//import './PrimaryIconButton.js';
 
 // MUI Theme & Styling
 import { ThemeProvider, createTheme} from '@mui/material/styles';
@@ -7,15 +8,18 @@ import { ThemeProvider, createTheme} from '@mui/material/styles';
 // MUI Components:
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
+//import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import Container from '@mui/material/Container';
 import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
+import Link from '@mui/material/Link';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import TextField from '@mui/material/TextField';
 import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
 
 // MUI Icons:
 import MenuIcon from '@mui/icons-material/Menu';
@@ -55,7 +59,7 @@ function NavBar(props) {
   return (
       <AppBar position="static">
         <Toolbar>
-          <h1 id="site-title">KW</h1>
+          <Typography id="site-title" variant="h1" component="div">KW</Typography>
           <IconButton onClick={handleMenu} aria-label="menu" aria-controls="main-menu" aria-haspopup="true" size="large">
             <MenuIcon id="main-menu-icon"/>
           </IconButton>
@@ -99,7 +103,7 @@ function ColorCompare(props) {
             <IconButton expand={expanded} onClick={handleExpandClick}><ExpandCircleDownIcon /></IconButton>
           </CardActions>
           <Collapse in={expanded} unmountOnExit>
-            <p>RGB: </p>
+            <Typography variant="body1">RGB: </Typography>
           </Collapse>
         </Card>
       </Box>
@@ -111,7 +115,7 @@ function ColorCompare(props) {
             <IconButton expand={expanded} onClick={handleExpandClick}><ExpandCircleDownIcon /></IconButton>
           </CardActions>
           <Collapse in={expanded} unmountOnExit>
-            <p>RGB: </p>
+            <Typography variant="body1">RGB: </Typography>
           </Collapse>
         </Card>
       </Box>
@@ -128,25 +132,25 @@ export default function App() {
         <NavBar />
       </header>
       <Container maxWidth="md">
-        <h2>This site is under construction</h2>
-        <p>There's more coming soon!
+        <Typography variant="h2" component="div">This site is under construction</Typography>
+        <Typography variant="body1">There's more coming soon!
             For now, please find me on&nbsp;
-            <a href="https://linkedin.com/in/kristinwiseman" rel="noreferrer" target="_blank">LinkedIn</a>
-        </p>
+            <Link href="https://linkedin.com/in/kristinwiseman" rel="noreferrer" target="_blank">LinkedIn</Link>
+        </Typography>
       </Container>
-      <h3>Color Comparator</h3>
+      <Typography variant="h3">Color Comparator</Typography>
       <ColorCompare />
       <Box sx={{bgcolor: kwTheme.palette.neutral.main}}>
         <Container id="about-section">
-          <h3>About Me</h3>
-          <p>I'm currently a part time apprentice developer at net2Community, Inc. My work there revolves around Drupal (theming and site building), but in my spare time I like to use the MERN stack. Here's where I say more good things about myself and maybe move the link to my LinkedIn from above. This bio may be incomplete, but at least it says more about me than lorem ipsum text..?</p>
+          <Typography variant="h3">About Me</Typography>
+          <Typography variant="body1">I'm currently a part time apprentice developer at net2Community, Inc. My work there revolves around Drupal (theming and site building), but in my spare time I like to use the MERN stack. Here's where I say more good things about myself and maybe move the link to my LinkedIn from above. This bio may be incomplete, but at least it says more about me than lorem ipsum text..?</Typography>
         </Container>
       </Box>
       <Container id="contact-section">
-        <h3>Contact</h3>
-        <a href="https://linkedin.com/in/kristinwiseman" rel="noreferrer" target="_blank"><LinkedInIcon /></a>
-        <a href="mailto:kristin.w.dev@gmail.com"><EmailIcon /></a>
-        <a href="https://github.com/kristin-wiseman"><GitHubIcon /></a>
+        <Typography variant="h3">Contact</Typography>
+        <Link href="https://linkedin.com/in/kristinwiseman" rel="noreferrer" target="_blank"><LinkedInIcon /></Link>
+        <Link href="mailto:kristin.w.dev@gmail.com"><EmailIcon /></Link>
+        <Link href="https://github.com/kristin-wiseman"><GitHubIcon /></Link>
       </Container>
     </ThemeProvider>
     </>
