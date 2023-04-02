@@ -8,6 +8,12 @@ a {
   padding-bottom: 1rem;
 }
 
+#color-compare {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: .75rem;
+}
+
 #contact-section > a > svg {
   font-size: 2rem;
 }
@@ -28,4 +34,10 @@ a {
 
 @media (prefers-reduced-motion: no-preference) {
   /* add motion here ? */
+}
+
+@media screen and (max-width: 480px){
+  #color-compare {
+    grid-template-columns: auto;
+  }
 }

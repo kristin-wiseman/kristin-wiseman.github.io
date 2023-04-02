@@ -81,7 +81,8 @@ function NavBar(props) {
 function ColorCompare(props) {
   const [color1, setColor1] = React.useState("FFFFFF");
   const [color2, setColor2] = React.useState("FFFFFF");
-  const [expanded, setExpanded] = React.useState(false);
+  const [expanded1, setExpanded1] = React.useState(false);
+  const [expanded2, setExpanded2] = React.useState(false);
 
   const handleColor1 = (event) => {
     setColor1(event.target.value);
@@ -89,38 +90,36 @@ function ColorCompare(props) {
   const handleColor2 = (event) => {
     setColor2(event.target.value);
   };
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
+  const handleExpand1 = () => {
+    setExpanded1(!expanded1);
+  };
+  const handleExpand2 = () => {
+    setExpanded2(!expanded2);
   };
 
   return (
-    <Box id="color-compare" display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2}>
-      <Box gridColumn="span 6">
-        <Card variant="outlined">
-          <Box sx={{height: 300, bgcolor:"#"+color1}}></Box>
-          <CardActions>
-            <TextField id='c1' onChange={handleColor1} label="Color 1" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
-            <IconButton expand={expanded} onClick={handleExpandClick}><ExpandCircleDownIcon /></IconButton>
-          </CardActions>
-          <Collapse in={expanded} unmountOnExit>
-            <Typography variant="body1">RGB: </Typography>
-          </Collapse>
-        </Card>
-      </Box>
-      <Box gridColumn="span 6">
-        <Card variant="outlined">
-          <Box sx={{height: 300, bgcolor:"#"+color2}}></Box>
-          <CardActions>
-            <TextField id='c2' onChange={handleColor2} label="Color 2" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
-            <IconButton expand={expanded} onClick={handleExpandClick}><ExpandCircleDownIcon /></IconButton>
-          </CardActions>
-          <Collapse in={expanded} unmountOnExit>
-            <Typography variant="body1">RGB: </Typography>
-          </Collapse>
-        </Card>
-      </Box>
-
-    </Box>
+    <Container id="color-compare">
+      <Card variant="outlined">
+        <Box sx={{height: 300, bgcolor:"#"+color1}}></Box>
+        <CardActions>
+          <TextField id='c1' onChange={handleColor1} label="Color 1" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
+          <IconButton expand={expanded1} onClick={handleExpand1}><ExpandCircleDownIcon /></IconButton>
+        </CardActions>
+        <Collapse in={expanded1} unmountOnExit>
+          <Typography variant="body1">RGB: </Typography>
+        </Collapse>
+      </Card>
+      <Card variant="outlined">
+        <Box sx={{height: 300, bgcolor:"#"+color2}}></Box>
+        <CardActions>
+          <TextField id='c2' onChange={handleColor2} label="Color 2" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
+          <IconButton expand={expanded2} onClick={handleExpand2}><ExpandCircleDownIcon /></IconButton>
+        </CardActions>
+        <Collapse in={expanded2} unmountOnExit>
+          <Typography variant="body1">RGB: </Typography>
+        </Collapse>
+      </Card>
+    </Container>
   );
 }
 
