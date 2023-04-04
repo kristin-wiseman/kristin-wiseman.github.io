@@ -25,7 +25,7 @@ function ColorCard(props) {
         <Card variant="outlined">
             <Box sx={{height: 300, bgcolor:"#"+color}}></Box>
             <CardActions>
-                <TextField onChange={handleColor} label={props.colorID} variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
+                <TextField onChange={handleColor} label={"Color " + props.colorID} variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
                 <IconButton expand={expanded} onClick={handleExpand}><ExpandCircleDownIcon /></IconButton>
             </CardActions>
             <Collapse in={expanded} unmountOnExit>
