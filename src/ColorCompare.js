@@ -10,48 +10,36 @@ import Typography from '@mui/material/Typography';
 
 import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 
+function ColorCard(props) {
+    const [color, setColor] = React.useState("FFFFFF");
+    const [expanded, setExpanded] = React.useState(false);
+    
+    const handleColor = (event) => {
+        setColor(event.target.value);
+    };
+    const handleExpand = () => {
+        setExpanded(!expanded);
+    };
 
-export default function ColorCompare(props) {
-    const [color1, setColor1] = React.useState("FFFFFF");
-    const [color2, setColor2] = React.useState("FFFFFF");
-    const [expanded1, setExpanded1] = React.useState(false);
-    const [expanded2, setExpanded2] = React.useState(false);
-  
-    const handleColor1 = (event) => {
-      setColor1(event.target.value);
-    };
-    const handleColor2 = (event) => {
-      setColor2(event.target.value);
-    };
-    const handleExpand1 = () => {
-      setExpanded1(!expanded1);
-    };
-    const handleExpand2 = () => {
-      setExpanded2(!expanded2);
-    };
-  
+    return (
+        <Card variant="outlined">
+            <Box sx={{height: 300, bgcolor:"#"+color}}></Box>
+            <CardActions>
+                <TextField onChange={handleColor} label={props.colorID} variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
+                <IconButton expand={expanded} onClick={handleExpand}><ExpandCircleDownIcon /></IconButton>
+            </CardActions>
+            <Collapse in={expanded} unmountOnExit>
+                <Typography variant="body1">RGB: </Typography>
+            </Collapse>
+        </Card>
+    );
+}
+
+export default function ColorCompare(props) {  
     return (
       <Container id="color-compare">
-        <Card variant="outlined">
-          <Box sx={{height: 300, bgcolor:"#"+color1}}></Box>
-          <CardActions>
-            <TextField id='c1' onChange={handleColor1} label="Color 1" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
-            <IconButton expand={expanded1} onClick={handleExpand1}><ExpandCircleDownIcon /></IconButton>
-          </CardActions>
-          <Collapse in={expanded1} unmountOnExit>
-            <Typography variant="body1">RGB: </Typography>
-          </Collapse>
-        </Card>
-        <Card variant="outlined">
-          <Box sx={{height: 300, bgcolor:"#"+color2}}></Box>
-          <CardActions>
-            <TextField id='c2' onChange={handleColor2} label="Color 2" variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
-            <IconButton expand={expanded2} onClick={handleExpand2}><ExpandCircleDownIcon /></IconButton>
-          </CardActions>
-          <Collapse in={expanded2} unmountOnExit>
-            <Typography variant="body1">RGB: </Typography>
-          </Collapse>
-        </Card>
+        <ColorCard colorID="1"/>
+        <ColorCard colorID="2"/>
       </Container>
     );
-  }
+}
