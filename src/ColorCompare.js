@@ -13,12 +13,18 @@ import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 function ColorCard(props) {
     const [color, setColor] = React.useState("FFFFFF");
     const [expanded, setExpanded] = React.useState(false);
-    
+    let r = 255;
+    let g = 255;
+    let b = 255;
+
     const handleColor = (event) => {
         setColor(event.target.value);
     };
     const handleExpand = () => {
         setExpanded(!expanded);
+    };
+    const handleRGB = (color) => {
+
     };
 
     return (
@@ -29,7 +35,7 @@ function ColorCard(props) {
                 <IconButton expand={expanded} onClick={handleExpand}><ExpandCircleDownIcon /></IconButton>
             </CardActions>
             <Collapse in={expanded} unmountOnExit>
-                <Typography variant="body1">RGB: </Typography>
+                <Typography variant="body1">RGB: ({r}, {g}, {b})</Typography>
             </Collapse>
         </Card>
     );
