@@ -91,7 +91,7 @@ export default function App() {
       <Box sx={{bgcolor: kwTheme.palette.neutral.main}}>
         <Container id="about-section">
           <Typography variant="h3">About Me</Typography>
-          <Typography variant="body1">I'm currently a part time apprentice developer at net2Community, Inc. My work there revolves around Drupal (theming and site building), but in my spare time I like to use the MERN stack. Here's where I say more good things about myself and maybe move the link to my LinkedIn from above. This bio may be incomplete, but at least it says more about me than lorem ipsum text..?</Typography>
+          <Typography variant="body1">I'm currently a part time web developer at net2Community, Inc. My work there revolves around Drupal (theming and site building), but in my spare time I like to use the MERN stack. Here's where I say more good things about myself and maybe move the link to my LinkedIn from above. This bio may be incomplete, but at least it says more about me than lorem ipsum text..?</Typography>
         </Container>
       </Box>
       <Container id="contact-section">
