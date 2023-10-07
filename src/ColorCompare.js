@@ -6,14 +6,14 @@ import Collapse from '@mui/material/Collapse';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
+//import Typography from '@mui/material/Typography';
 
-import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
+//import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
+import ForwardIcon from '@mui/icons-material/Forward';
 
 function ColorCard(props) {
-    const [color, setColor] = React.useState("FFFFFF");
+    const [color, setColor] = React.useState("");
     const [expanded, setExpanded] = React.useState(false);
-    let rgb= "";
 
     const handleColor = (event) => {
         setColor(event.target.value);
@@ -22,21 +22,24 @@ function ColorCard(props) {
         setExpanded(!expanded);
     };
     const handleRGB = () => {
-        if (/[^a-e|\d]+/ig.test(color)) {
-            return "Please enter a valid hexadecimal color"
+        if (/[^a-f\d]+/i.test(color) || (color.length!==3 && color.length!==6)) {
+            return "Enter a valid hex code"
+        } else if (color.length === 3) {
+            return "A 6 digit color"
+        } else {
+            return `(${parseInt(color.slice(0,2), 16)}, ${parseInt(color.slice(2,4), 16)}, ${parseInt(color.slice(4,6), 16)})`;
         }
-        return rgb= `(${parseInt(color.slice(0,2), 16)}, ${parseInt(color.slice(2,4), 16)}, ${parseInt(color.slice(4,6), 16)})`;
     };
 
     return (
         <Card variant="outlined">
             <Box sx={{height: 300, bgcolor:"#"+color}}></Box>
             <CardActions>
-                <TextField onChange={handleColor} label={"Color " + props.colorID} variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
-                <IconButton expand={expanded} onClick={handleExpand}><ExpandCircleDownIcon /></IconButton>
+                <TextField onChange={handleColor} label={"Color " + props.colorID + " Hex"} variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
+                <IconButton onClick={handleExpand}><ForwardIcon /></IconButton>
             </CardActions>
             <Collapse in={expanded} unmountOnExit>
-                <Typography variant="body1">RGB: {color.length==6 ? handleRGB() : ""}</Typography>
+                <TextField label="RGB" variant="outlined" value={handleRGB()} InputProps={{readOnly: true,}}></TextField>
             </Collapse>
         </Card>
     );

@@ -86,8 +86,10 @@ export default function App() {
             <Link href="https://linkedin.com/in/kristinwiseman" rel="noreferrer" target="_blank">LinkedIn</Link>
         </Typography>
       </Container>
-      <Typography variant="h3">Color Comparator</Typography>
-      <ColorCompare />
+      <Container>
+        <Typography variant="h3">Color Comparator</Typography>
+        <ColorCompare />
+      </Container>
       <Box sx={{bgcolor: kwTheme.palette.neutral.main}}>
         <Container id="about-section">
           <Typography variant="h3">About Me</Typography>
