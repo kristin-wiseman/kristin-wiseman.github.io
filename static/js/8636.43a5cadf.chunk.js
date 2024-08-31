@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkkristin_wiseman_github_io=self.webpackChunkkristin_wiseman_github_io||[]).push([[8636],{8636:(i,s,e)=>{e.r(s),e.d(s,{default:()=>t});const t={}}}]);
+//# sourceMappingURL=8636.43a5cadf.chunk.js.map
