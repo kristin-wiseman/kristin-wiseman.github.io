@@ -79,8 +79,9 @@ export default function App() {
       <header>
         <NavBar />
       </header>
-      <Container maxWidth="md">
-        <Typography variant="h2" component="div">This site is under construction</Typography>
+      <Container maxWidth="lg">
+        <Typography variant="h1">Kristin Wiseman,</Typography>
+        <Typography variant="h2">Frontend developer</Typography>
         <Typography variant="body1">There's more coming soon!
             For now, please find me on&nbsp;
             <Link href="https://linkedin.com/in/kristinwiseman" rel="noreferrer" target="_blank">LinkedIn</Link>

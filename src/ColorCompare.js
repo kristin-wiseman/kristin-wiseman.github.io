@@ -4,12 +4,12 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
 import Container from '@mui/material/Container';
+import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
 //import Typography from '@mui/material/Typography';
 
-//import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
-import ForwardIcon from '@mui/icons-material/Forward';
+import ExpandCircleDownIcon from '@mui/icons-material/ExpandCircleDown';
 
 function ColorCard(props) {
     const [color, setColor] = React.useState("");
@@ -34,9 +34,10 @@ function ColorCard(props) {
     return (
         <Card variant="outlined">
             <Box sx={{height: 300, bgcolor:"#"+color}}></Box>
+            <Divider />
             <CardActions>
                 <TextField onChange={handleColor} label={"Color " + props.colorID + " Hex"} variant="outlined" helperText="Input color hex code, without the '#'"></TextField>
-                <IconButton onClick={handleExpand}><ForwardIcon /></IconButton>
+                <IconButton onClick={handleExpand}><ExpandCircleDownIcon /></IconButton>
             </CardActions>
             <Collapse in={expanded} unmountOnExit>
                 <TextField label="RGB" variant="outlined" value={handleRGB()} InputProps={{readOnly: true,}}></TextField>
@@ -45,7 +46,7 @@ function ColorCard(props) {
     );
 }
 
-export default function ColorCompare(props) {  
+export default function ColorCompare(props) {
     return (
       <Container id="color-compare">
         <ColorCard colorID="1"/>
